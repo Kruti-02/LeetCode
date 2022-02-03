@@ -1,7 +1,7 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack =[]
-        closetoopen = {']':'[',')':'(','}':'{'}
+        stack = []
+        closetoopen = {']':'[','}':'{',')':'('}
         
         for char in s:
             if char in closetoopen:
@@ -11,5 +11,6 @@ class Solution:
                     return False
             else:
                 stack.append(char)
+                
         return True if not stack else False
         
