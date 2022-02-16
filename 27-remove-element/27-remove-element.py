@@ -6,7 +6,7 @@ class Solution:
         while left<=right:
             if nums[left] == val:
                 nums[left] = nums[right]
-                nums[right] = '_'
+                #nums[right] = '_'
                 right -= 1
             else:
                 left += 1
