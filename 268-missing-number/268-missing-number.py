@@ -5,11 +5,13 @@ class Solution:
         
         if nums[-1] != len(nums):
             return len(nums)
+      
         elif nums[0] != 0:
             return 0
         
         for i in range(1,len(nums)):
-            exp_num = nums[i-1]+1
-            if nums[i] != exp_num:
-                return exp_num
+            if nums[i-1]+1 != nums[i]:
+                return nums[i-1]+1
+        return len(nums)
+            
         
