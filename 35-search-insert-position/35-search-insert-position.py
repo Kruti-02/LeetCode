@@ -1,14 +1,12 @@
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
-        if target > nums[-1] :
-            return len(nums)
-        if target < nums[0]:
-            return 0
-        for i in range(0,len(nums)):
-            if nums[i] == target:
-                return i
-            elif nums[i+1] > target:
-                return i+1
-        return 0
-            
-        
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            pivot = (left + right) // 2
+            if nums[pivot] == target:
+                return pivot
+            if target < nums[pivot]:
+                right = pivot - 1
+            else:
+                left = pivot + 1
+        return left
