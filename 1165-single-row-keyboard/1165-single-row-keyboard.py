@@ -10,6 +10,3 @@ class Solution:
             time += abs(index - layout[c])
             index = layout[c]
         return time
-    
-    
-        
