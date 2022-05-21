@@ -1,19 +1,19 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
+        # Convert array of digits into a string
+        num = ""
+        for element in digits:
+            num += str(element)
         
-        number = 0
-        multiplier = 10 ** (len(digits) - 1)
+        # Convert that string into integer
+        num = int(num)
         
-        for digit in digits:
-            number = number + digit * multiplier
-            multiplier = multiplier//10
+        # Add 1 to the integer
+        num +=1
         
-        #print(number)
+        # Convert the integer to an array
+        res = [int(x) for x in str(num)]
         
-        number +=1 # 4322
+        # Return
+        return res
         
-        result = []
-        while number:
-            result.insert(0, number%10) #[]
-            number = number//10
-        return result
