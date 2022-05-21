@@ -1,9 +1,9 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        # Convert binary numbers to integer
+        #conver binnary to int
         a,b = int(a,2), int(b,2)
-        #print(a,b)
-        # Add
-        result = a+b
-        # Convert integer to binary string
-        return '{0:b}'.format(result)        
+        #add the number
+        res = a + b
+        #return the binnary
+        return '{0:b}'.format(res)
+  
