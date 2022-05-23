@@ -1,11 +1,13 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        dic = {}
-        
+        # Create a hashset
+        hash_set = set()
+        #Go to every value in array  
         for n in nums:
-            if n in dic:
+            #check if number already exist in hash_set
+            if n in hash_set:
                 return True
-            else:
-                dic[n] = 1
+            #add each value to the hash_set
+            hash_set.add(n)
         return False
         
