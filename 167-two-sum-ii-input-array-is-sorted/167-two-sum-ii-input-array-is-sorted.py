@@ -1,12 +1,15 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        keymap = {}
+        l = 0
+        r= len(numbers)-1
         
-        for i,n in enumerate(numbers):
-            diff = target-n
-            if diff in keymap:
-                return [keymap[diff],i+1]
-            keymap[n] = i+1
-        return
-            
-        
+        while l<r:
+            cur_sum = numbers[l] + numbers[r]
+            if cur_sum > target:
+                r -=1
+            elif cur_sum < target:
+                l += 1
+            else:
+                return [l+1,r+1]
+                
+                
